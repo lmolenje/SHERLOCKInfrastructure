@@ -1,8 +1,8 @@
 [DOCKER SERVER]
-ec2-34-204-42-77.compute-1.amazonaws.com
+ec2-34-204-42-77.compute-1.amazonaws.com ansible_ssh_private_key_file=~/.ssh/SHERLOCK.pem
 
 [ANSIBLE SERVER]
-ec2-54-221-2-187.compute-1.amazonaws.com
+ec2-54-221-2-187.compute-1.amazonaws.com ansible_ssh_private_key_file=~/.ssh/SHERLOCK.pem
 
 [SHERLOCK]
-ec2-52-23-224-106.compute-1.amazonaws.com
+ec2-52-23-224-106.compute-1.amazonaws.com ansible_ssh_private_key_file=~/.ssh/SHERLOCK.pem
