@@ -35,15 +35,14 @@
     - name: Create Jenkins Container
       docker_container:
         name: Jenkins
-        image: davidcaste/alpine-tomcat
+        image: davidcaste/alpine-tomcat-jenkins
         command: "{{ default_container_command }}"
         state: present
-
       
     - name: Create Tomcat (SHERLOCK) Container
       docker_container:
-        name: "{{ default_container_name }}{{ item }}"
-        image: "{{ default_container_image }}"
+        name: SHERLOCK
+        image: qxodream/alpine-tomcat-jenkins
         command: "{{ default_container_command }}"
         state: present
 
