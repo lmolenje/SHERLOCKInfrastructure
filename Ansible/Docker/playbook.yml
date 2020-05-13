@@ -1,7 +1,16 @@
 #################################################
 # Docker
 #################################################
-
+#################################################
+# Docker
+#################################################
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+  tasks:
+  
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
