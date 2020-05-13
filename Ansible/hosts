@@ -1,4 +1,8 @@
-[SHERLOCK WEB]
+[DOCKER SERVER]
+ec2-34-204-42-77.compute-1.amazonaws.com
+
+[ANSIBLE SERVER]
 ec2-54-221-2-187.compute-1.amazonaws.com
 
 [SHERLOCK]
+ec2-52-23-224-106.compute-1.amazonaws.com
