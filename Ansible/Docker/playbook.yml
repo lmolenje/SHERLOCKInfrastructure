@@ -22,16 +22,28 @@
     - name: Update apt and install docker-ce
       apt: update_cache=yes name=docker.io state=latest
 
-    - name: Pull default Docker image
+    - name: Pull Jenkins Docker image
       docker_image:
-        name: "{{ default_container_image }}"
+        name: qxodream/alpine-tomcat-jenkins
+        source: pull
+        
+    - name: Pull Tomcat (SHERLOCK) Docker image
+      docker_image:
+        name: davidcaste/alpine-tomcat
         source: pull
 
-    # Creates the number of containers defined by the variable create_containers, using values from vars file
-    - name: Create default containers
+    - name: Create Jenkins Container
+      docker_container:
+        name: Jenkins
+        image: davidcaste/alpine-tomcat
+        command: "{{ default_container_command }}"
+        state: present
+
+      
+    - name: Create Tomcat (SHERLOCK) Container
       docker_container:
         name: "{{ default_container_name }}{{ item }}"
         image: "{{ default_container_image }}"
         command: "{{ default_container_command }}"
         state: present
-      with_sequence: count={{ create_containers }}
+
