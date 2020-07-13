@@ -26,7 +26,7 @@
         name: qxodream/alpine-tomcat-jenkins
         source: pull
         
-    - name: Pull Tomcat (SHERLOCK) Docker image
+    - name: Pull Tomcat (SHERLOCK Web Server) Docker image
       docker_image:
         name: davidcaste/alpine-tomcat
         source: pull
@@ -38,7 +38,7 @@
         command: "{{ default_container_command }}"
         state: present
       
-    - name: Create Tomcat (SHERLOCK) Container
+    - name: Create Tomcat (SHERLOCK Web Server) Container
       docker_container:
         name: SHERLOCK
         image: qxodream/alpine-tomcat-jenkins
